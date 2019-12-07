@@ -1,0 +1,8 @@
+module Laziness where
+
+type Matrix = [[Bool]]
+
+findTrue :: Matrix -> (Int, Int)
+findTrue m = head [(x, y) | (x, y) <- indexes, m !! x !! y]
+  where
+    indexes = [(x, y) | i <- [0..], x <- [0..i], y <- [0..i]]
